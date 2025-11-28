@@ -1,8 +1,8 @@
-/* 
+/*
  Tex LaTex Language Specification
  Part of package TeX-XCode Syntax Coloring
- Patrick Iglesias-Zemmour & Gemini (Google)
- Version 1.4.1 (Corrected Order) July 26, 2025
+ Patrick Iglesias-Zemmour
+ Version 1.5.0 (Live Math Coloring) November 2025
  http://math.huji.ac.il/~piz/
  
  Creative Common Attribution License
@@ -60,7 +60,12 @@
   
   {
     Identifier = "xcode.lang.tex.word";
-    Syntax = { StartChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; Chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; Type = "xcode.syntax.plain"; };
+    Syntax = { 
+        StartChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+        // ADDED: _ and ' to ensure math coloring doesn't break on subscripts
+        Chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'_"; 
+        Type = "xcode.syntax.plain"; 
+    };
   },
   {
     Identifier = "xcode.lang.tex.number";
@@ -90,12 +95,19 @@
   },
   
   /****************************************************************************/
-  // MARK: Math Inline
+  // MARK: Math Inline (UPDATED FOR LIVE COLORING)
   /****************************************************************************/
   
   {
     Identifier = "xcode.lang.tex.math.inline";
-    Syntax = { Match = ( "\\$[^\\$]*\\$" ); Type = "xcode.syntax.keyword"; };
+    Syntax = { 
+        // CHANGED: Switched from Match to Start/End for immediate coloring
+        Start = "$"; 
+        End = "$"; 
+        Type = "xcode.syntax.keyword"; 
+        // Added IncludeRules so commands inside math (like \alpha) are colored
+        IncludeRules = ( "xcode.lang.tex.command", "xcode.lang.tex.command.special" );
+    };
   },
   
   /****************************************************************************/
