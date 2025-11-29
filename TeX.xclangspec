@@ -2,14 +2,14 @@
  Tex LaTex Language Specification
  Part of package TeX-XCode Syntax Coloring
  Patrick Iglesias-Zemmour
- Version 1.5.0 (Live Math Coloring) November 2025
+ Version 1.8.1 (Consistent Displayed Math) November 2025
  http://math.huji.ac.il/~piz/
  
  Creative Common Attribution License
  http://creativecommons.org/licenses/by/3.0/
  */
 
-( 
+(
   
   /****************************************************************************/
   // MARK: TeX Specification Top-Level
@@ -24,17 +24,16 @@
     Name = TeX;
     Syntax = {
       Tokenizer = "xcode.lang.tex.lexer";
-      // CORRECTED RULE ORDER:
-      // We now process begin/end blocks BEFORE generic commands.
       IncludeRules = (
         "xcode.lang.tex.word",
         "xcode.lang.tex.number",
         "xcode.lang.tex.comment.singleline",
-        "xcode.lang.tex.beginendblock",      // MOVED UP: This must run before the general command rule.
+        "xcode.lang.tex.beginendblock",
         "xcode.lang.tex.math.block",
         "xcode.lang.tex.math.bracketblock",
         "xcode.lang.tex.math.inline",
-        "xcode.lang.tex.command",            // This now handles all *other* commands.
+        "xcode.lang.tex.braces",
+        "xcode.lang.tex.command",
         "xcode.lang.tex.command.special"
       );
       Type = "xcode.syntax.plain";
@@ -43,7 +42,7 @@
   
   
   /****************************************************************************/
-  // MARK: TeX Lexers
+  // MARK: TeX Lexers & Words
   /****************************************************************************/
   
   {
@@ -53,19 +52,9 @@
       IncludeRules = ( "xcode.lang.tex.beginkeyword", "xcode.lang.tex.endkeyword" );
     };
   },
-  
-  /****************************************************************************/
-  // MARK: TeX Specification Words & Numbers
-  /****************************************************************************/
-  
   {
     Identifier = "xcode.lang.tex.word";
-    Syntax = { 
-        StartChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-        // ADDED: _ and ' to ensure math coloring doesn't break on subscripts
-        Chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'_"; 
-        Type = "xcode.syntax.plain"; 
-    };
+    Syntax = { StartChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; Chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; Type = "xcode.syntax.plain"; };
   },
   {
     Identifier = "xcode.lang.tex.number";
@@ -73,63 +62,50 @@
   },
   
   /****************************************************************************/
-  // MARK: TeX Specification Environment math.block
+  // MARK: TeX Math Environments
   /****************************************************************************/
   
   {
     Identifier = "xcode.lang.tex.math.block";
-    Syntax = {
-      Start = "\$\$"; End = "\$\$"; Foldable = YES; Recursive = NO;
-      IncludeRules = ( "xcode.lang.tex.word", "xcode.lang.tex.number", "xcode.lang.tex.command", "xcode.lang.tex.command.special", "xcode.lang.tex.comment.singleline" );
-      Type = "xcode.syntax.keyword";
+    Syntax = { Start = "\$\$"; End = "\$\$"; Foldable = YES; Recursive = NO; Type = "xcode.syntax.keyword";
+      IncludeRules = ("xcode.lang.tex.braces","xcode.lang.tex.command");
     };
   },
-
   {
     Identifier = "xcode.lang.tex.math.bracketblock";
-    Syntax = {
-      Start = "\\\["; End = "\\\]"; Foldable = YES; Recursive = NO;
-      IncludeRules = ( "xcode.lang.tex.word", "xcode.lang.tex.number", "xcode.lang.tex.command", "xcode.lang.tex.command.special", "xcode.lang.tex.comment.singleline" );
-      Type = "xcode.syntax.keyword";
+    Syntax = { Start = "\\\["; End = "\\\]"; Foldable = YES; Recursive = NO; Type = "xcode.syntax.keyword";
+      IncludeRules = ("xcode.lang.tex.braces","xcode.lang.tex.command");
     };
+  },
+  {
+    Identifier = "xcode.lang.tex.math.inline";
+    Syntax = { Start = "$"; End = "$"; Type = "xcode.syntax.keyword"; };
   },
   
   /****************************************************************************/
-  // MARK: Math Inline (UPDATED FOR LIVE COLORING)
+  // MARK: TeX Specification Braces
   /****************************************************************************/
   
   {
-    Identifier = "xcode.lang.tex.math.inline";
-    Syntax = { 
-        // CHANGED: Switched from Match to Start/End for immediate coloring
-        Start = "$"; 
-        End = "$"; 
-        Type = "xcode.syntax.keyword"; 
-        // Added IncludeRules so commands inside math (like \alpha) are colored
-        IncludeRules = ( "xcode.lang.tex.command", "xcode.lang.tex.command.special" );
-    };
+    Identifier = "xcode.lang.tex.braces";
+    Syntax = { StartChars = "{}"; Chars = "{}."; Type = "xcode.syntax.preprocessor"; };
   },
   
   /****************************************************************************/
-  // MARK: TeX Specification commands (IMPROVED)
+  // MARK: TeX Specification commands
   /****************************************************************************/
   
   {
     Identifier = "xcode.lang.tex.command";
-    Syntax = {
-        Match = ( "(\\\\[a-zA-Z@]+\\*?)(\\s*\\[[^\\]]*\\])?(\\s*\\{[^\\}]*\\})?" );
-        CaptureTypes = ( "xcode.syntax.identifier.macro", "xcode.syntax.string", "xcode.syntax.preprocessor" );
-        Type = "xcode.syntax.plain";
-    };
+    Syntax = { StartChars = "\\"; Chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; CaseSensitive = NO; Type = "xcode.syntax.identifier.macro"; AltType = "xcode.syntax.word"; };
   },
-  
   {
     Identifier = "xcode.lang.tex.command.special";
     Syntax = { StartChars = "\\"; Chars = "'\"\^`{}()[]-+=.,;:/|%¬ß*#&@$<>~\\"; Type = "xcode.syntax.identifier.macro"; AltType = "xcode.syntax.word"; };
   },
   
   /****************************************************************************/
-  // MARK: TeX Specification Environment block
+  // MARK: TeX Environment block
   /****************************************************************************/
   
   {
@@ -145,12 +121,12 @@
     Syntax = {
       Tokenizer = "xcode.lang.tex.lexer"; Start = "xcode.lang.tex.beginkeyword"; End = "xcode.lang.tex.endkeyword";
       Recursive = YES; Foldable = YES; Type = "xcode.syntax.plain";
-      IncludeRules = ( "xcode.lang.tex.math.block", "xcode.lang.tex.math.bracketblock", "xcode.lang.tex.math.inline", "xcode.lang.tex.command", "xcode.lang.tex.command.special", "xcode.lang.tex.comment.singleline" );
+      IncludeRules = ( "xcode.lang.tex.math.block", "xcode.lang.tex.math.bracketblock", "xcode.lang.tex.math.inline", "xcode.lang.tex.braces", "xcode.lang.tex.command", "xcode.lang.tex.command.special", "xcode.lang.tex.comment.singleline" );
     };
   },
   
   /****************************************************************************/
-  // MARK: TeX Language Specification comments
+  // MARK: TeX Comments
   /****************************************************************************/
   
   {
