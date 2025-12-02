@@ -4,7 +4,7 @@ This plugin provides full-featured syntax highlighting for TeX and LaTeX documen
 
 It was originally created by Patrick Iglesias-Zemmour and has been updated and improved in collaboration with Google's Gemini to be more robust and stable for modern Xcode versions.
 
-![TeX in Xcode Dark Mode](screenshot.png)
+![TeX in Xcode Dark Mode](Screenshot.png)
 
 ## Features
 
