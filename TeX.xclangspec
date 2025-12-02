@@ -2,7 +2,7 @@
  Tex LaTex Language Specification
  Part of package TeX-XCode Syntax Coloring
  Patrick Iglesias-Zemmour
- Version 1.8.1 (Consistent Displayed Math) November 2025
+ Version 1.8.2 (Indentation Fix) December 2025
  http://math.huji.ac.il/~piz/
  
  Creative Common Attribution License
@@ -83,12 +83,17 @@
   },
   
   /****************************************************************************/
-  // MARK: TeX Specification Braces
+  // MARK: TeX Specification Braces (FIXED)
   /****************************************************************************/
   
+  // Fixed in v1.8.2: Uses 'Words' for precision and 'character' type
+  // to prevent Xcode from forcing the indentation to the left.
   {
     Identifier = "xcode.lang.tex.braces";
-    Syntax = { StartChars = "{}"; Chars = "{}."; Type = "xcode.syntax.preprocessor"; };
+    Syntax = { 
+        Words = ( "{", "(", "[", "]", ")", "}" ); 
+        Type = "xcode.syntax.character"; 
+    };
   },
   
   /****************************************************************************/
