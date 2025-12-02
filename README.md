@@ -50,23 +50,13 @@ If you prefer to install files manually, you must extract them from the plugin b
     *   **Specs:** Copy `TeX.xclangspec` to `/Applications/Xcode.app/Contents/SharedFrameworks/SourceModel.framework/Versions/A/Resources/LanguageSpecifications/`.
     *   **Metadata:** Copy `Xcode.SourceCodeLanguage.TeX.plist` to `/Applications/Xcode.app/Contents/SharedFrameworks/SourceModel.framework/Versions/A/Resources/LanguageMetadata/`.
 
-## Building from Source
+## Source Code
 
-If you want to modify the plugin yourself using the included Xcode project:
+Currently,
+this repository hosts the compiled plugin and the installation tools.
+The full Xcode project source is not included to keep the repository lightweight.
 
-1.  Open the project in Xcode.
-2.  **Important:** Go to **Build Settings** and set **"User Script Sandboxing"** to **No**.
-3.  Press **⌘B** to build.
-4.  The build script will copy the finished `TeX.ideplugin` to the project root folder.
-
-## Using Xcode as a TeX Environment
-
-To configure Xcode to compile your `.tex` files:
-
-1.  Go to **Product > Scheme > Edit Scheme**.
-2.  Select the **"Build"** phase and expand **"Pre-actions"**.
-3.  Add a **"New Run Script Action"**.
-4.  Paste the following command (replacing `YourFile.tex`):
-    ```sh
-    /Library/TeX/texbin/pdflatex "${SRCROOT}/YourFile.tex"
-    ```
+If you are a developer and wish to modify the plugin,
+please open an Issue or contact me.
+If there is interest,
+I will upload the full Xcode project structure here.
