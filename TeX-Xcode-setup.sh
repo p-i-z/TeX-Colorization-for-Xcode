@@ -1,45 +1,37 @@
 #!/bin/bash
 
 # TeX-Xcode-setup.sh
-# Installs the TeX syntax highlighting plugin and themes for Xcode.
+# Launcher script.
+# It finds the installation logic inside the TeX.ideplugin bundle and executes it.
 
 set -e
 
 echo "Starting TeX Colorization for Xcode installation..."
 
+# 1. Find the Plugin Bundle
+#    Assumes the script is in the same folder as the plugin.
 SOURCE_DIR=$(pwd)
+PLUGIN_NAME="TeX.ideplugin"
+PLUGIN_PATH="$SOURCE_DIR/$PLUGIN_NAME"
+WORKER_SCRIPT="$PLUGIN_PATH/Contents/Resources/install_worker.sh"
 
-PLUGINS_DIR=~/Library/Developer/Xcode/Plug-ins
-SPECS_DIR="/Applications/Xcode.app/Contents/SharedFrameworks/SourceModel.framework/Versions/A/Resources/LanguageSpecifications"
-METADATA_DIR="/Applications/Xcode.app/Contents/SharedFrameworks/SourceModel.framework/Versions/A/Resources/LanguageMetadata"
-THEMES_DIR=~/Library/Developer/Xcode/UserData/FontAndColorThemes
-
-# --- Verify Source Files ---
-if ! [ -d "$SOURCE_DIR/TeX.ideplugin" ]; then
-    echo "Error: Source files not found. Please run this script from the project's root directory."
+# 2. Verify the Bundle exists
+if ! [ -d "$PLUGIN_PATH" ]; then
+    echo "Error: $PLUGIN_NAME not found."
+    echo "Please make sure the 'TeX.ideplugin' is in the same directory as this script."
     exit 1
 fi
 
-# --- Install Files ---
-echo "Creating directories if they do not exist..."
-mkdir -p "$PLUGINS_DIR"
-mkdir -p "$THEMES_DIR"
+# 3. Verify the Worker Script exists
+if ! [ -f "$WORKER_SCRIPT" ]; then
+    echo "Error: Installation script not found inside the bundle."
+    echo "The plugin may be corrupted or built incorrectly."
+    exit 1
+fi
 
-echo "Installing TeX.ideplugin..."
-cp -R "$SOURCE_DIR/TeX.ideplugin" "$PLUGINS_DIR/"
-
-echo "Installing themes..."
-cp "$SOURCE_DIR/Basic TeX.xccolortheme" "$THEMES_DIR/"
-cp "$SOURCE_DIR/Dark TeX.xccolortheme" "$THEMES_DIR/"
-
-echo ""
-echo "You may be asked for your administrator password for system files."
-
-echo "Installing TeX.xclangspec..."
-sudo cp "$SOURCE_DIR/TeX.xclangspec" "$SPECS_DIR/"
-
-echo "Installing Xcode.SourceCodeLanguage.TeX.plist..."
-sudo cp "$SOURCE_DIR/Xcode.SourceCodeLanguage.TeX.plist" "$METADATA_DIR/"
+# 4. Launch the Worker
+#    We use 'bash' explicitly to ensure execution.
+bash "$WORKER_SCRIPT"
 
 echo ""
 echo "--------------------------------------------------"
