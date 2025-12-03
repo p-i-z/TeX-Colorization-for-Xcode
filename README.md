@@ -1,6 +1,6 @@
 # TeX & LaTeX Syntax Highlighting for Xcode
 
-This plugin provides full-featured syntax highlighting for TeX and LaTeX documents directly within the Xcode IDE, turning it into a powerful, minimalist environment for academic and technical writing.
+This plugin provides full-featured **colorization** (syntax highlighting) for TeX and LaTeX documents directly within the Xcode IDE, turning it into a powerful, minimalist environment for academic and technical writing.
 
 It was originally created by Patrick Iglesias-Zemmour and has been updated and improved in collaboration with Google's Gemini to be more robust and stable for modern Xcode versions.
 
