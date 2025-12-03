@@ -61,4 +61,4 @@ please open an Issue or contact me.
 If there is interest,
 I will upload the full Xcode project structure here.
 
-This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
