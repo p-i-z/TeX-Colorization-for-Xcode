@@ -1,54 +1,63 @@
 # TeX & LaTeX Syntax Highlighting for Xcode
 
-This plugin provides full-featured **colorization** (syntax highlighting) for TeX and LaTeX documents directly within the Xcode IDE, turning it into a powerful, minimalist environment for academic and technical writing.
+This plugin provides robust syntax highlighting for TeX and LaTeX documents directly within the Xcode IDE,
+turning it into a powerful,
+minimalist environment for academic and technical writing.
 
-It was originally created by Patrick Iglesias-Zemmour and has been updated and improved in collaboration with Google's Gemini to be more robust and stable for modern Xcode versions.
+It was originally created by Patrick Iglesias-Zemmour and has been updated and improved in collaboration with Google's Gemini to be stable and reliable for modern Xcode versions.
 
 ![TeX in Xcode Dark Mode](Screenshot.png)
 
 ## Features
 
-*   **Robust Highlighting:** A stable, predictable, and fast highlighting engine.
-*   **Full Math Environment Support:**
-    *   **Displayed Math (`$$...$$` and `\[...\]`):** The entire block is colored, with commands and braces highlighted inside for readability.
-    *   **Inline Math (`$...$`):** The entire block is given a solid color to make it stand out clearly from surrounding text.
-*   **Code Folding:** All `\begin{...}...\end{...}` environments are fully foldable.
-*   **Structure Highlighting:** Commands, braces, and comments are clearly distinguished.
-*   **Light and Dark Themes:** Includes "Basic TeX" (Light) and "Dark TeX" (Dark).
+*   **Robust Highlighting:**
+    A stable,
+    predictable,
+    and fast highlighting engine designed to never crash.
+*   **Hybrid Math Environment Support:**
+    *   **Inline Math (`$...$`):**
+        Rendered as a solid block of color to make it stand out clearly from surrounding text.
+    *   **Displayed Math (`$$...$$`):**
+        The entire block is colored,
+        with commands and braces highlighted inside for readability in large equations.
+    *   **Bracketed Math (`\[...\]`):**
+        Treated as standard commands for maximum stability.
+        The text inside is highlighted normally.
+*   **Code Folding:**
+    All `\begin{...}...\end{...}` environments are fully foldable for easy navigation.
+*   **Structure Highlighting:**
+    Commands,
+    braces (`{}`, `()`, `[]`),
+    and comments are clearly distinguished.
+*   **Light and Dark Themes:**
+    Includes "Basic TeX" (Light) and "Dark TeX" (Dark) themes.
 
 ## Compatibility
 
-*   **Modern Xcode (15+):** Works natively. You must click **"Load Bundle"** when Xcode launches.
-*   **Older Xcode (12-14):** Supported via UUID matching. See the `Info.plist` if you need to add a specific UUID.
+*   **Modern Xcode (15+):**
+    Works natively.
+    You must click **"Load Bundle"** when Xcode first launches after installation.
+*   **Older Xcode (12-14):**
+    Supported via a list of compatibility UUIDs.
+    If the plugin does not load,
+    you may need to add your Xcode's specific UUID to the `Info.plist` file inside the bundle.
 
 ## Installation
 
-### Automated Installation (Recommended)
+1.  Download the `.zip` file from the latest **[Release](https://github.com/p-i-z/TeX-Colorization-for-Xcode/releases)**.
+2.  Unzip the file.
+3.  **Important:**
+    To run the installer,
+    you must bypass the macOS security warning the first time.
+    **Right-click** on the `Install TeX for Xcode.command` file and select **"Open"**.
+4.  A dialog will appear.
+    Click the **"Open"** button to run the script.
 
-1.  Download the `.zip` file from the latest [Release](https://github.com/p-i-z/TeX-Colorization-for-Xcode/releases).
-2.  Unzip the file. You will see the `TeX.ideplugin` and the setup script.
-3.  Open Terminal and navigate to the folder:
-    ```sh
-    cd path/to/unzipped/folder
-    ```
-4.  Run the setup script:
-    ```sh
-    chmod +x TeX-Xcode-setup.sh
-    ./TeX-Xcode-setup.sh
-    ```
-    *You may be asked for your password to install the system-level specifications.*
+    *(After this first time,
+    you can simply double-click the file to run it again if needed).*
 
-### Manual Installation
-
-If you prefer to install files manually, you must extract them from the plugin bundle:
-
-1.  Right-click on **`TeX.ideplugin`** and select **"Show Package Contents"**.
-2.  Navigate to `Contents/Resources`.
-3.  Copy the files to their respective locations:
-    *   **Plugin:** Copy the entire `TeX.ideplugin` to `~/Library/Developer/Xcode/Plug-ins/`.
-    *   **Themes:** Copy `.xccolortheme` files to `~/Library/Developer/Xcode/UserData/FontAndColorThemes/`.
-    *   **Specs:** Copy `TeX.xclangspec` to `/Applications/Xcode.app/Contents/SharedFrameworks/SourceModel.framework/Versions/A/Resources/LanguageSpecifications/`.
-    *   **Metadata:** Copy `Xcode.SourceCodeLanguage.TeX.plist` to `/Applications/Xcode.app/Contents/SharedFrameworks/SourceModel.framework/Versions/A/Resources/LanguageMetadata/`.
+A Terminal window will open and run the installer.
+You may be asked for your administrator password to complete the installation.
 
 ## Source Code
 
@@ -60,5 +69,7 @@ If you are a developer and wish to modify the plugin,
 please open an Issue or contact me.
 If there is interest,
 I will upload the full Xcode project structure here.
+
+## License
 
 This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
