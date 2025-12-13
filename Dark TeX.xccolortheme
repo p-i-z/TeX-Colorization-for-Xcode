@@ -99,7 +99,7 @@
 		<key>xcode.syntax.attribute</key>
 		<string>0.988333 0.400562 0.999338 1</string>
 		<key>xcode.syntax.character</key>
-		<string>0.399992 0.800062 0.998949 1</string>
+		<string>0.0594717 0.501943 0.998465 1</string>
 		<key>xcode.syntax.comment</key>
 		<string>0.45 0.65 0.45 1</string>
 		<key>xcode.syntax.comment.doc</key>
@@ -212,7 +212,7 @@
 		<key>xcode.syntax.plain</key>
 		<string>SFMono-Medium - 12.0</string>
 		<key>xcode.syntax.preprocessor</key>
-		<string>Menlo-Bold - 12.0</string>
+		<string>Menlo-Regular - 12.0</string>
 		<key>xcode.syntax.regex</key>
 		<string>SFMono-Medium - 12.0</string>
 		<key>xcode.syntax.regex.capturename</key>
