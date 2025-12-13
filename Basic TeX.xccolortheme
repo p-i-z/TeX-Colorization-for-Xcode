@@ -97,11 +97,11 @@
 	<key>DVTSourceTextSyntaxColors</key>
 	<dict>
 		<key>xcode.syntax.attribute</key>
-		<string>6.57476e-05 0.00180101 0.998229 0.550726</string>
+		<string>0.501961 0.282353 0.00392157 1</string>
 		<key>xcode.syntax.character</key>
 		<string>0.0594717 0.501943 0.998465 1</string>
 		<key>xcode.syntax.comment</key>
-		<string>0.501959 0.501974 0.501965 1</string>
+		<string>0.501961 0.501961 0.501961 1</string>
 		<key>xcode.syntax.comment.doc</key>
 		<string>0.0285416 0.250919 0.501964 1</string>
 		<key>xcode.syntax.comment.doc.keyword</key>
@@ -123,7 +123,7 @@
 		<key>xcode.syntax.identifier.function.system</key>
 		<string>0.169 0.512 0.625 1</string>
 		<key>xcode.syntax.identifier.macro</key>
-		<string>6.57476e-05 0.00180101 0.998229 1</string>
+		<string>0.501961 0 0.501961 1</string>
 		<key>xcode.syntax.identifier.macro.system</key>
 		<string>0 0 1 1</string>
 		<key>xcode.syntax.identifier.type</key>
@@ -135,9 +135,9 @@
 		<key>xcode.syntax.identifier.variable.system</key>
 		<string>0.169 0.512 0.625 1</string>
 		<key>xcode.syntax.keyword</key>
-		<string>0.501963 0 0.00812761 1</string>
+		<string>0.50196 0 0.00813092 1</string>
 		<key>xcode.syntax.mark</key>
-		<string>0.0285416 0.250919 0.501964 0.753246</string>
+		<string>0.0285416 0.250919 0.501964 1</string>
 		<key>xcode.syntax.markup.code</key>
 		<string>0.665 0.052 0.569 1</string>
 		<key>xcode.syntax.number</key>
@@ -145,9 +145,9 @@
 		<key>xcode.syntax.plain</key>
 		<string>0.0980392 0.0980392 0.0980392 1</string>
 		<key>xcode.syntax.preprocessor</key>
-		<string>0.0653951 0.501825 0.251003 1</string>
+		<string>0.0588235 0.407843 0.627451 1</string>
 		<key>xcode.syntax.regex</key>
-		<string>0.0594717 0.501943 0.998465 1</string>
+		<string>0.823529 0.435294 0.0509804 1</string>
 		<key>xcode.syntax.regex.capturename</key>
 		<string>0.169 0.512 0.625 1</string>
 		<key>xcode.syntax.regex.charname</key>
@@ -157,7 +157,7 @@
 		<key>xcode.syntax.regex.other</key>
 		<string>0.0980392 0.0980392 0.0980392 1</string>
 		<key>xcode.syntax.string</key>
-		<string>0.988908 0.400489 0.399963 1</string>
+		<string>0.823529 0.435294 0.0509804 1</string>
 		<key>xcode.syntax.url</key>
 		<string>0 0 1 1</string>
 	</dict>
@@ -166,9 +166,9 @@
 		<key>xcode.syntax.attribute</key>
 		<string>Menlo-Bold - 13.0</string>
 		<key>xcode.syntax.character</key>
-		<string>Menlo-Bold - 13.0</string>
+		<string>Menlo-Regular - 13.0</string>
 		<key>xcode.syntax.comment</key>
-		<string>Menlo-Bold - 13.0</string>
+		<string>Menlo-Regular - 13.0</string>
 		<key>xcode.syntax.comment.doc</key>
 		<string>Menlo-Regular - 13.0</string>
 		<key>xcode.syntax.comment.doc.keyword</key>
