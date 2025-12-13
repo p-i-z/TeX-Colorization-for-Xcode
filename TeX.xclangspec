@@ -2,7 +2,7 @@
  Tex LaTex Language Specification
  Part of package TeX-XCode Syntax Coloring
  Patrick Iglesias-Zemmour
- Version 1.8.2 (Indentation Fix) December 2025
+ Version 2.2 (Final Hybrid Version) December 2025
  http://math.huji.ac.il/~piz/
  
  Creative Commons Attribution-ShareAlike 4.0 International License
@@ -30,11 +30,10 @@
         "xcode.lang.tex.comment.singleline",
         "xcode.lang.tex.beginendblock",
         "xcode.lang.tex.math.block",
-        "xcode.lang.tex.math.bracketblock",
         "xcode.lang.tex.math.inline",
-        "xcode.lang.tex.braces",
         "xcode.lang.tex.command",
-        "xcode.lang.tex.command.special"
+        "xcode.lang.tex.command.special",
+        "xcode.lang.tex.braces"
       );
       Type = "xcode.syntax.plain";
     };
@@ -62,38 +61,30 @@
   },
   
   /****************************************************************************/
-  // MARK: TeX Math Environments
+  // MARK: TeX Math Environments (Final Hybrid Version)
   /****************************************************************************/
   
+  // This rule for $$...$$ remains "intelligent" as you requested.
   {
     Identifier = "xcode.lang.tex.math.block";
     Syntax = { Start = "\$\$"; End = "\$\$"; Foldable = YES; Recursive = NO; Type = "xcode.syntax.keyword";
-      IncludeRules = ("xcode.lang.tex.braces","xcode.lang.tex.command");
+      IncludeRules = ("xcode.lang.tex.braces","xcode.lang.tex.command", "xcode.lang.tex.comment.singleline");
     };
   },
-  {
-    Identifier = "xcode.lang.tex.math.bracketblock";
-    Syntax = { Start = "\\\["; End = "\\\]"; Foldable = YES; Recursive = NO; Type = "xcode.syntax.keyword";
-      IncludeRules = ("xcode.lang.tex.braces","xcode.lang.tex.command");
-    };
-  },
+
+  // This rule for $...$ remains a simple, solid block.
   {
     Identifier = "xcode.lang.tex.math.inline";
     Syntax = { Start = "$"; End = "$"; Type = "xcode.syntax.keyword"; };
   },
   
   /****************************************************************************/
-  // MARK: TeX Specification Braces (FIXED)
+  // MARK: TeX Specification Braces and Parenthesis
   /****************************************************************************/
   
-  // Fixed in v1.8.2: Uses 'Words' for precision and 'character' type
-  // to prevent Xcode from forcing the indentation to the left.
   {
     Identifier = "xcode.lang.tex.braces";
-    Syntax = { 
-        Words = ( "{", "(", "[", "]", ")", "}" ); 
-        Type = "xcode.syntax.character"; 
-    };
+    Syntax = { StartChars = "{}()[]"; Chars = "{}()[]"; Type = "xcode.syntax.character"; };
   },
   
   /****************************************************************************/
@@ -104,6 +95,7 @@
     Identifier = "xcode.lang.tex.command";
     Syntax = { StartChars = "\\"; Chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; CaseSensitive = NO; Type = "xcode.syntax.identifier.macro"; AltType = "xcode.syntax.word"; };
   },
+  // This rule now handles \[ and \] as simple special commands, which is safe.
   {
     Identifier = "xcode.lang.tex.command.special";
     Syntax = { StartChars = "\\"; Chars = "'\"\^`{}()[]-+=.,;:/|%¬ß*#&@$<>~\\"; Type = "xcode.syntax.identifier.macro"; AltType = "xcode.syntax.word"; };
@@ -126,7 +118,7 @@
     Syntax = {
       Tokenizer = "xcode.lang.tex.lexer"; Start = "xcode.lang.tex.beginkeyword"; End = "xcode.lang.tex.endkeyword";
       Recursive = YES; Foldable = YES; Type = "xcode.syntax.plain";
-      IncludeRules = ( "xcode.lang.tex.math.block", "xcode.lang.tex.math.bracketblock", "xcode.lang.tex.math.inline", "xcode.lang.tex.braces", "xcode.lang.tex.command", "xcode.lang.tex.command.special", "xcode.lang.tex.comment.singleline" );
+      IncludeRules = ( "xcode.lang.tex.math.block", "xcode.lang.tex.math.inline", "xcode.lang.tex.braces", "xcode.lang.tex.command", "xcode.lang.tex.command.special", "xcode.lang.tex.comment.singleline" );
     };
   },
   
