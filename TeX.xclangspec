@@ -2,7 +2,7 @@
  Tex LaTex Language Specification
  Part of package TeX-XCode Syntax Coloring
  Patrick Iglesias-Zemmour
- Version 2.2 (Final Hybrid Version) December 2025
+ Version 2.3 (Expanded File Support) December 2025
  http://math.huji.ac.il/~piz/
  
  Creative Commons Attribution-ShareAlike 4.0 International License
@@ -38,7 +38,6 @@
       Type = "xcode.syntax.plain";
     };
   },
-  
   
   /****************************************************************************/
   // MARK: TeX Lexers & Words
