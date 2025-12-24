@@ -27,38 +27,52 @@ It was originally created by Patrick Iglesias-Zemmour and has been updated and i
 
 1.  Download the `.zip` file from the latest **[Release](https://github.com/p-i-z/TeX-Colorization-for-Xcode/releases)**.
 2.  Unzip the file.
-3.  **Double-click** the `Install TeX for Xcode.command` file to run the installer.
+3.  **Important:**
+    To run the installer,
+    you must bypass the macOS security warning the first time.
+    **Right-click** on the `Install TeX for Xcode.command` file and select **"Open"**.
+4.  A dialog will appear.
+    Click the **"Open"** button to run the script.
 
-A Terminal window will open and run the script.
+A Terminal window will open and run the installer.
 You may be asked for your administrator password to complete the installation.
 
-### Troubleshooting macOS Security
+### Troubleshooting: Wrong Icon or "Permission Denied"
 
-Modern versions of macOS have a security feature called Gatekeeper that may prevent the installer script from running because it was downloaded from the internet.
+On some systems,
+the installer may have the wrong icon (a text file) or you may see a "permission denied" error in Terminal.
+This is easy to fix.
 
-**Method 1: The Standard Workaround**
-The first time you run the script,
-**right-click** on the `Install TeX for Xcode.command` file and select **"Open"**.
-A dialog will appear.
-Click the **"Open"** button to grant an exception.
+**Method 1: The "Get Info" Fix (Recommended)**
 
-**Method 2: The "Power User" Fix (If Method 1 Fails)**
-If macOS still refuses to run the script,
-you will need to manually remove the "quarantine" flag that the system places on downloaded files.
+This is the standard Mac way to fix the file association.
 
-1.  Open the **Terminal** application.
-2.  Use the `cd` command to navigate to the folder where you unzipped the files.
-    For example:
+1.  **Right-click** on the `Install TeX for Xcode.command` file and choose **"Get Info"**.
+2.  In the "Get Info" window,
+    find the **"Open with:"** section.
+3.  Select **Terminal.app** from the dropdown menu.
+    (If it is not there,
+    choose "Other...",
+    navigate to `/System/Applications/Utilities/`,
+    and select Terminal).
+4.  Click the **"Change All..."** button.
+
+This will permanently fix the icon and allow the file to be double-clicked.
+
+**Method 2: The Terminal Fix**
+
+If you are comfortable with the Terminal,
+you can fix the permissions directly.
+
+1.  Open Terminal and `cd` into the folder containing the installer.
+2.  Run this command:
     ```sh
-    cd ~/Downloads/TeX-Colorization-for-Xcode-v2.4
+    chmod +x "Install TeX for Xcode.command"
     ```
-3.  Run the following command to remove the quarantine flag:
-    ```sh
-    xattr -d com.apple.quarantine "Install TeX for Xcode.command"
-    ```
-4.  After running this command,
-    you should be able to double-click the installer,
-    and it will run without any security warnings.
+
+After performing either of these fixes,
+you should be able to run the installer correctly.
+
     
 ## Getting Started
 
