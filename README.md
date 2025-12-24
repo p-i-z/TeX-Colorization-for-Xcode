@@ -37,41 +37,24 @@ It was originally created by Patrick Iglesias-Zemmour and has been updated and i
 A Terminal window will open and run the installer.
 You may be asked for your administrator password to complete the installation.
 
-### Troubleshooting: Wrong Icon or "Permission Denied"
+### Troubleshooting: If the Installer Won't Run
 
-On some systems,
-the installer may have the wrong icon (a text file) or you may see a "permission denied" error in Terminal.
-This is easy to fix.
+If macOS refuses to run the script or says it "cannot be verified," follow these steps.
 
-**Method 1: The "Get Info" Fix (Recommended)**
+**Method 1: The Terminal Fix (Permissions)**
+If you see a "permission denied" error, the file may have lost its executable status:
+1.  Open Terminal and `cd` into the folder.
+2.  Run: `chmod +x "Install TeX for Xcode.command"`
 
-This is the standard Mac way to fix the file association.
+**Method 2: The Quarantine Fix (The Definitive Solution)**
+If you still get the "Apple could not verify..." warning even after right-clicking and choosing Open, you must manually remove the download quarantine flag.
 
-1.  **Right-click** on the `Install TeX for Xcode.command` file and choose **"Get Info"**.
-2.  In the "Get Info" window,
-    find the **"Open with:"** section.
-3.  Select **Terminal.app** from the dropdown menu.
-    (If it is not there,
-    choose "Other...",
-    navigate to `/System/Applications/Utilities/`,
-    and select Terminal).
-4.  Click the **"Change All..."** button.
-
-This will permanently fix the icon and allow the file to be double-clicked.
-
-**Method 2: The Terminal Fix**
-
-If you are comfortable with the Terminal,
-you can fix the permissions directly.
-
-1.  Open Terminal and `cd` into the folder containing the installer.
+1.  Open Terminal and `cd` into the folder.
 2.  Run this command:
     ```sh
-    chmod +x "Install TeX for Xcode.command"
+    xattr -d com.apple.quarantine "Install TeX for Xcode.command"
     ```
-
-After performing either of these fixes,
-you should be able to run the installer correctly.
+3.  You can now double-click the file normally.
 
 ### Optional: Cleaner Filename (Power Users)
 
