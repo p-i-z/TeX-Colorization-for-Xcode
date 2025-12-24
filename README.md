@@ -73,6 +73,11 @@ you can fix the permissions directly.
 After performing either of these fixes,
 you should be able to run the installer correctly.
 
+### Optional: Cleaner Filename (Power Users)
+
+If you prefer a cleaner look, you can remove the `.command` extension from the installer file (renaming it to just `Install TeX for Xcode`).
+
+As long as the file retains its executable permissions, macOS will recognize it as a Unix executable (displaying the "exec" icon) and it will still launch the Terminal when double-clicked.
     
 ## Getting Started
 
