@@ -40,11 +40,17 @@ A Terminal window will open and run the installer. You may be asked for your adm
 2.  **Load the Bundle:** When prompted, click **"Load Bundle"**.
 3.  **Select the Theme:** Go to **Xcode > Settings > Themes** and select either **"Basic TeX"** or **"Dark TeX"**.
 
-## Source Code
+## Building from Source (For Developers)
 
-Currently, this repository hosts the compiled plugin and the installation tools. The full Xcode project source is not included to keep the repository lightweight.
+This repository is a complete Xcode project.
+To build the plugin from source:
 
-If you are a developer and wish to modify the plugin, please open an Issue or contact me. If there is interest, I will upload the full Xcode project structure here.
+1.  Clone the repository and open the `TeX.xcodeproj` file.
+2.  **Important:**
+    Go to **Build Settings** and set **"User Script Sandboxing"** to **No**.
+    This is required to allow the build script to copy the finished plugin.
+3.  Press **⌘B** to build.
+    A post-build script will automatically place the finished `TeX.ideplugin` bundle in the project's root directory.
 
 ## License
 

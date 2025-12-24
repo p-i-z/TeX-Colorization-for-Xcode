@@ -1,0 +1,352 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDC1BD812EFB5FD700CF2969 /* Basic TeX.xccolortheme in Resources */ = {isa = PBXBuildFile; fileRef = CDC1BD792EFB5F2B00CF2969 /* Basic TeX.xccolortheme */; };
+		CDC1BD822EFB5FD700CF2969 /* Dark TeX.xccolortheme in Resources */ = {isa = PBXBuildFile; fileRef = CDC1BD7A2EFB5F2B00CF2969 /* Dark TeX.xccolortheme */; };
+		CDC1BD842EFB5FD700CF2969 /* install_worker.sh in Resources */ = {isa = PBXBuildFile; fileRef = CDC1BD7C2EFB5F2B00CF2969 /* install_worker.sh */; };
+		CDC1BD852EFB5FD700CF2969 /* TeX.xclangspec in Resources */ = {isa = PBXBuildFile; fileRef = CDC1BD7D2EFB5F2B00CF2969 /* TeX.xclangspec */; };
+		CDC1BD862EFB5FD700CF2969 /* TeX.xcplugindata in Resources */ = {isa = PBXBuildFile; fileRef = CDC1BD7E2EFB5F2B00CF2969 /* TeX.xcplugindata */; };
+		CDC1BD872EFB5FD700CF2969 /* Xcode.SourceCodeLanguage.TeX.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDC1BD7F2EFB5F2B00CF2969 /* Xcode.SourceCodeLanguage.TeX.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CDC1BD622EFB5E0700CF2969 /* New-TeX-Project.ideplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "New-TeX-Project.ideplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDC1BD792EFB5F2B00CF2969 /* Basic TeX.xccolortheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Basic TeX.xccolortheme"; sourceTree = "<group>"; };
+		CDC1BD7A2EFB5F2B00CF2969 /* Dark TeX.xccolortheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Dark TeX.xccolortheme"; sourceTree = "<group>"; };
+		CDC1BD7B2EFB5F2B00CF2969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDC1BD7C2EFB5F2B00CF2969 /* install_worker.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = install_worker.sh; sourceTree = "<group>"; };
+		CDC1BD7D2EFB5F2B00CF2969 /* TeX.xclangspec */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xclangspec; path = TeX.xclangspec; sourceTree = "<group>"; };
+		CDC1BD7E2EFB5F2B00CF2969 /* TeX.xcplugindata */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TeX.xcplugindata; sourceTree = "<group>"; };
+		CDC1BD7F2EFB5F2B00CF2969 /* Xcode.SourceCodeLanguage.TeX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Xcode.SourceCodeLanguage.TeX.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDC1BD5F2EFB5E0700CF2969 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CDC1BD592EFB5E0700CF2969 = {
+			isa = PBXGroup;
+			children = (
+				CDC1BD802EFB5F2B00CF2969 /* TeX */,
+				CDC1BD632EFB5E0700CF2969 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CDC1BD632EFB5E0700CF2969 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDC1BD622EFB5E0700CF2969 /* New-TeX-Project.ideplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDC1BD802EFB5F2B00CF2969 /* TeX */ = {
+			isa = PBXGroup;
+			children = (
+				CDC1BD7B2EFB5F2B00CF2969 /* Info.plist */,
+				CDC1BD7E2EFB5F2B00CF2969 /* TeX.xcplugindata */,
+				CDC1BD7D2EFB5F2B00CF2969 /* TeX.xclangspec */,
+				CDC1BD7F2EFB5F2B00CF2969 /* Xcode.SourceCodeLanguage.TeX.plist */,
+				CDC1BD792EFB5F2B00CF2969 /* Basic TeX.xccolortheme */,
+				CDC1BD7A2EFB5F2B00CF2969 /* Dark TeX.xccolortheme */,
+				CDC1BD7C2EFB5F2B00CF2969 /* install_worker.sh */,
+			);
+			path = TeX;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDC1BD612EFB5E0700CF2969 /* New-TeX-Project */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDC1BD662EFB5E0700CF2969 /* Build configuration list for PBXNativeTarget "New-TeX-Project" */;
+			buildPhases = (
+				CDC1BD5E2EFB5E0700CF2969 /* Sources */,
+				CDC1BD5F2EFB5E0700CF2969 /* Frameworks */,
+				CDC1BD602EFB5E0700CF2969 /* Resources */,
+				CDC1BD882EFB609C00CF2969 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "New-TeX-Project";
+			packageProductDependencies = (
+			);
+			productName = "New-TeX-Project";
+			productReference = CDC1BD622EFB5E0700CF2969 /* New-TeX-Project.ideplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDC1BD5A2EFB5E0700CF2969 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					CDC1BD612EFB5E0700CF2969 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+				};
+			};
+			buildConfigurationList = CDC1BD5D2EFB5E0700CF2969 /* Build configuration list for PBXProject "New-TeX-Project" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CDC1BD592EFB5E0700CF2969;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CDC1BD632EFB5E0700CF2969 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDC1BD612EFB5E0700CF2969 /* New-TeX-Project */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDC1BD602EFB5E0700CF2969 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDC1BD812EFB5FD700CF2969 /* Basic TeX.xccolortheme in Resources */,
+				CDC1BD822EFB5FD700CF2969 /* Dark TeX.xccolortheme in Resources */,
+				CDC1BD842EFB5FD700CF2969 /* install_worker.sh in Resources */,
+				CDC1BD852EFB5FD700CF2969 /* TeX.xclangspec in Resources */,
+				CDC1BD862EFB5FD700CF2969 /* TeX.xcplugindata in Resources */,
+				CDC1BD872EFB5FD700CF2969 /* Xcode.SourceCodeLanguage.TeX.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CDC1BD882EFB609C00CF2969 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# This script copies the built plugin from Xcode's DerivedData folder\n# into your main project folder, so it's easy to find.\n\n# 1. Define the destination (The folder where your .xcodeproj file lives)\nDESTINATION=\"${SRCROOT}\"\n\n# 2. Remove any old version in the destination to ensure a clean copy\nrm -rf \"${DESTINATION}/${FULL_PRODUCT_NAME}\"\n\n# 3. Copy the new plugin from the build directory to the destination\necho \"Copying ${FULL_PRODUCT_NAME} to ${DESTINATION}...\"\ncp -R \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${DESTINATION}/\"\n\necho \"Done.\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDC1BD5E2EFB5E0700CF2969 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CDC1BD642EFB5E0700CF2969 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CDC1BD652EFB5E0700CF2969 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CDC1BD672EFB5E0700CF2969 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.PIZ.New-TeX-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				WRAPPER_EXTENSION = ideplugin;
+			};
+			name = Debug;
+		};
+		CDC1BD682EFB5E0700CF2969 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.PIZ.New-TeX-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				WRAPPER_EXTENSION = ideplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDC1BD5D2EFB5E0700CF2969 /* Build configuration list for PBXProject "New-TeX-Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDC1BD642EFB5E0700CF2969 /* Debug */,
+				CDC1BD652EFB5E0700CF2969 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDC1BD662EFB5E0700CF2969 /* Build configuration list for PBXNativeTarget "New-TeX-Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDC1BD672EFB5E0700CF2969 /* Debug */,
+				CDC1BD682EFB5E0700CF2969 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDC1BD5A2EFB5E0700CF2969 /* Project object */;
+}

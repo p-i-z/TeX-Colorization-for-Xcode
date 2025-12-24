@@ -22,8 +22,6 @@
 	<array>
 		<string>MacOSX</string>
 	</array>
-	<key>XCPluginHasUI</key>
-	<false/>
 	<key>DVTPlugInCompatibilityUUIDs</key>
 	<array>
 		<string>8A66E736-A720-4B3C-92F1-33D9962C69DF</string>
@@ -50,12 +48,13 @@
 		<string>7FDF5C7A-131F-4ABB-9EDC-8C5F8F0B8A90</string>
 		<string>50AF8560-5AB3-4A69-80A4-0A6182870912</string>
 		<string>6C8909A0-F208-4C21-9224-504F9A70056E</string>
-		<!-- Restored missing UUIDs below -->
 		<string>DF12405B-55B4-4E00-8029-6AEFA7DBAD0F</string>
 		<string>3928AC50-EA32-404F-9CAF-49710A35483C</string>
 		<string>2F1A5FFF-BFEB-4498-B2AC-1296A7454F81</string>
 		<string>0D0B4174-3D1B-40F6-8E3E-FFFEB962F788</string>
 		<string>F56A1938-53DE-493D-9D64-87EE6C415E4D</string>
 	</array>
+	<key>XCPluginHasUI</key>
+	<false/>
 </dict>
 </plist>
