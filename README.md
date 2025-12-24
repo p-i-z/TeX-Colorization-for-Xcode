@@ -27,13 +27,39 @@ It was originally created by Patrick Iglesias-Zemmour and has been updated and i
 
 1.  Download the `.zip` file from the latest **[Release](https://github.com/p-i-z/TeX-Colorization-for-Xcode/releases)**.
 2.  Unzip the file.
-3.  **Important:** To run the installer, you must bypass the macOS security warning the first time. **Right-click** on the `Install TeX for Xcode.command` file and select **"Open"**.
-4.  A dialog will appear. Click the **"Open"** button to run the script.
+3.  **Double-click** the `Install TeX for Xcode.command` file to run the installer.
 
-    *(After this first time, you can simply double-click the file to run it again if needed).*
+A Terminal window will open and run the script.
+You may be asked for your administrator password to complete the installation.
 
-A Terminal window will open and run the installer. You may be asked for your administrator password to complete the installation.
+### Troubleshooting macOS Security
 
+Modern versions of macOS have a security feature called Gatekeeper that may prevent the installer script from running because it was downloaded from the internet.
+
+**Method 1: The Standard Workaround**
+The first time you run the script,
+**right-click** on the `Install TeX for Xcode.command` file and select **"Open"**.
+A dialog will appear.
+Click the **"Open"** button to grant an exception.
+
+**Method 2: The "Power User" Fix (If Method 1 Fails)**
+If macOS still refuses to run the script,
+you will need to manually remove the "quarantine" flag that the system places on downloaded files.
+
+1.  Open the **Terminal** application.
+2.  Use the `cd` command to navigate to the folder where you unzipped the files.
+    For example:
+    ```sh
+    cd ~/Downloads/TeX-Colorization-for-Xcode-v2.4
+    ```
+3.  Run the following command to remove the quarantine flag:
+    ```sh
+    xattr -d com.apple.quarantine "Install TeX for Xcode.command"
+    ```
+4.  After running this command,
+    you should be able to double-click the installer,
+    and it will run without any security warnings.
+    
 ## Getting Started
 
 1.  **Restart Xcode:** After installing, you must completely quit and restart Xcode.
