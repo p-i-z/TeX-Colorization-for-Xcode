@@ -13,10 +13,11 @@
 		CDC1BD852EFB5FD700CF2969 /* TeX.xclangspec in Resources */ = {isa = PBXBuildFile; fileRef = CDC1BD7D2EFB5F2B00CF2969 /* TeX.xclangspec */; };
 		CDC1BD862EFB5FD700CF2969 /* TeX.xcplugindata in Resources */ = {isa = PBXBuildFile; fileRef = CDC1BD7E2EFB5F2B00CF2969 /* TeX.xcplugindata */; };
 		CDC1BD872EFB5FD700CF2969 /* Xcode.SourceCodeLanguage.TeX.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDC1BD7F2EFB5F2B00CF2969 /* Xcode.SourceCodeLanguage.TeX.plist */; };
+		CDD3CB962EFB7E2F002E843F /* Install TeX for Xcode.command in Resources */ = {isa = PBXBuildFile; fileRef = CDD3CB952EFB7E2F002E843F /* Install TeX for Xcode.command */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CDC1BD622EFB5E0700CF2969 /* New-TeX-Project.ideplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "New-TeX-Project.ideplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDC1BD622EFB5E0700CF2969 /* TeX.ideplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeX.ideplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC1BD792EFB5F2B00CF2969 /* Basic TeX.xccolortheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Basic TeX.xccolortheme"; sourceTree = "<group>"; };
 		CDC1BD7A2EFB5F2B00CF2969 /* Dark TeX.xccolortheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Dark TeX.xccolortheme"; sourceTree = "<group>"; };
 		CDC1BD7B2EFB5F2B00CF2969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -24,6 +25,7 @@
 		CDC1BD7D2EFB5F2B00CF2969 /* TeX.xclangspec */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xclangspec; path = TeX.xclangspec; sourceTree = "<group>"; };
 		CDC1BD7E2EFB5F2B00CF2969 /* TeX.xcplugindata */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TeX.xcplugindata; sourceTree = "<group>"; };
 		CDC1BD7F2EFB5F2B00CF2969 /* Xcode.SourceCodeLanguage.TeX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Xcode.SourceCodeLanguage.TeX.plist; sourceTree = "<group>"; };
+		CDD3CB952EFB7E2F002E843F /* Install TeX for Xcode.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Install TeX for Xcode.command"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,7 @@
 		CDC1BD632EFB5E0700CF2969 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDC1BD622EFB5E0700CF2969 /* New-TeX-Project.ideplugin */,
+				CDC1BD622EFB5E0700CF2969 /* TeX.ideplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +65,7 @@
 				CDC1BD792EFB5F2B00CF2969 /* Basic TeX.xccolortheme */,
 				CDC1BD7A2EFB5F2B00CF2969 /* Dark TeX.xccolortheme */,
 				CDC1BD7C2EFB5F2B00CF2969 /* install_worker.sh */,
+				CDD3CB952EFB7E2F002E843F /* Install TeX for Xcode.command */,
 			);
 			path = TeX;
 			sourceTree = "<group>";
@@ -70,24 +73,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CDC1BD612EFB5E0700CF2969 /* New-TeX-Project */ = {
+		CDC1BD612EFB5E0700CF2969 /* TeX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDC1BD662EFB5E0700CF2969 /* Build configuration list for PBXNativeTarget "New-TeX-Project" */;
+			buildConfigurationList = CDC1BD662EFB5E0700CF2969 /* Build configuration list for PBXNativeTarget "TeX" */;
 			buildPhases = (
 				CDC1BD5E2EFB5E0700CF2969 /* Sources */,
 				CDC1BD5F2EFB5E0700CF2969 /* Frameworks */,
 				CDC1BD602EFB5E0700CF2969 /* Resources */,
 				CDC1BD882EFB609C00CF2969 /* ShellScript */,
+				CDD3CB972EFB7EB8002E843F /* Make Installer Executable */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "New-TeX-Project";
+			name = TeX;
 			packageProductDependencies = (
 			);
 			productName = "New-TeX-Project";
-			productReference = CDC1BD622EFB5E0700CF2969 /* New-TeX-Project.ideplugin */;
+			productReference = CDC1BD622EFB5E0700CF2969 /* TeX.ideplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CDC1BD5D2EFB5E0700CF2969 /* Build configuration list for PBXProject "New-TeX-Project" */;
+			buildConfigurationList = CDC1BD5D2EFB5E0700CF2969 /* Build configuration list for PBXProject "TeX-Project" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -118,7 +122,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CDC1BD612EFB5E0700CF2969 /* New-TeX-Project */,
+				CDC1BD612EFB5E0700CF2969 /* TeX */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +135,7 @@
 				CDC1BD812EFB5FD700CF2969 /* Basic TeX.xccolortheme in Resources */,
 				CDC1BD822EFB5FD700CF2969 /* Dark TeX.xccolortheme in Resources */,
 				CDC1BD842EFB5FD700CF2969 /* install_worker.sh in Resources */,
+				CDD3CB962EFB7E2F002E843F /* Install TeX for Xcode.command in Resources */,
 				CDC1BD852EFB5FD700CF2969 /* TeX.xclangspec in Resources */,
 				CDC1BD862EFB5FD700CF2969 /* TeX.xcplugindata in Resources */,
 				CDC1BD872EFB5FD700CF2969 /* Xcode.SourceCodeLanguage.TeX.plist in Resources */,
@@ -156,6 +161,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# This script copies the built plugin from Xcode's DerivedData folder\n# into your main project folder, so it's easy to find.\n\n# 1. Define the destination (The folder where your .xcodeproj file lives)\nDESTINATION=\"${SRCROOT}\"\n\n# 2. Remove any old version in the destination to ensure a clean copy\nrm -rf \"${DESTINATION}/${FULL_PRODUCT_NAME}\"\n\n# 3. Copy the new plugin from the build directory to the destination\necho \"Copying ${FULL_PRODUCT_NAME} to ${DESTINATION}...\"\ncp -R \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${DESTINATION}/\"\n\necho \"Done.\"\n";
+		};
+		CDD3CB972EFB7EB8002E843F /* Make Installer Executable */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Make Installer Executable";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "chmod +x \"${SRCROOT}/TeX/Install TeX for Xcode.command\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -328,7 +351,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CDC1BD5D2EFB5E0700CF2969 /* Build configuration list for PBXProject "New-TeX-Project" */ = {
+		CDC1BD5D2EFB5E0700CF2969 /* Build configuration list for PBXProject "TeX-Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDC1BD642EFB5E0700CF2969 /* Debug */,
@@ -337,7 +360,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDC1BD662EFB5E0700CF2969 /* Build configuration list for PBXNativeTarget "New-TeX-Project" */ = {
+		CDC1BD662EFB5E0700CF2969 /* Build configuration list for PBXNativeTarget "TeX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDC1BD672EFB5E0700CF2969 /* Debug */,
