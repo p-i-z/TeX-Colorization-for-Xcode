@@ -13,7 +13,7 @@ Build/
 TeX.ideplugin
 
 # gitignore
-.gitignore
+*.gitignore
 
 # Release Archives
 # Ignore the .zip files we create for GitHub Releases.
