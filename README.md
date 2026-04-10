@@ -12,7 +12,7 @@ It was originally created by Patrick Iglesias-Zemmour and has been updated and i
 *   **Hybrid Math Environment Support:**
     *   **Inline Math (`$...$`):** Rendered as a simple, solid block of color to make it stand out clearly from surrounding text.
     *   **Displayed Math (`$$...$$`):** The entire block is colored, with commands and braces highlighted inside for readability in large equations.
-    *   **Bracketed Math (`\[...\]`):** Fully supported. **Tip:** Do not write `\\[` for a line break followed by math; use `\\ [` (with a space) or start math on a new line (this is good discipline).
+        **Tip:** Do not write `\\[` for a line break followed by `[` (like in `\\[1em]`); write `\\` then space then `[` (this is good discipline).
 *   **Expanded File Support:** Syntax highlighting is also applied to LaTeX style (`.sty`), class (`.cls`), and bibliography (`.bbl`) files.
 *   **Code Folding:** All `\begin{...}...\end{...}` environments are fully foldable for easy navigation.
 *   **Structure Highlighting:** Commands, braces (`{}`, `()`, `[]`), and comments are clearly distinguished.
