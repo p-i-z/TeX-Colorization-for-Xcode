@@ -2,7 +2,7 @@
  Tex LaTex Language Specification
  Part of package TeX-XCode Syntax Coloring
  Patrick Iglesias-Zemmour
- Version 2.3 (Expanded File Support) December 2025
+ Version 2.2 (Final) April 2026
  http://math.huji.ac.il/~piz/
  
  Creative Commons Attribution-ShareAlike 4.0 International License
@@ -29,8 +29,9 @@
         "xcode.lang.tex.number",
         "xcode.lang.tex.comment.singleline",
         "xcode.lang.tex.beginendblock",
-        "xcode.lang.tex.math.block",
-        "xcode.lang.tex.math.inline",
+        "xcode.lang.tex.math.display.brackets",   // NEW — before math.display.dollars
+        "xcode.lang.tex.math.display.dollars",    // existing $$
+        "xcode.lang.tex.math.inline",             // existing $
         "xcode.lang.tex.command",
         "xcode.lang.tex.command.special",
         "xcode.lang.tex.braces"
@@ -60,21 +61,39 @@
   },
   
   /****************************************************************************/
-  // MARK: TeX Math Environments (Final Hybrid Version)
+  // MARK: TeX Math Environments (Final Version)
   /****************************************************************************/
   
-  // This rule for $$...$$ remains "intelligent" as you requested.
+  // Display math \[ ... \] — simple version
+  // NOTE: This will also match \\[1em] line breaks, coloring them as math.
+  // This is a known limitation documented in README.
   {
-    Identifier = "xcode.lang.tex.math.block";
-    Syntax = { Start = "\$\$"; End = "\$\$"; Foldable = YES; Recursive = NO; Type = "xcode.syntax.keyword";
+    Identifier = "xcode.lang.tex.math.display.brackets";
+    Syntax = {
+      Start = "\\\[";
+      End = "\\\]";
+      Foldable = YES;
+      Recursive = NO;
+      Type = "xcode.syntax.keyword";
       IncludeRules = ("xcode.lang.tex.braces","xcode.lang.tex.command", "xcode.lang.tex.comment.singleline");
     };
   },
-
-  // This rule for $...$ remains a simple, solid block.
+  
+  // Display math $$ ... $$
+  {
+    Identifier = "xcode.lang.tex.math.display.dollars";
+    Syntax = { Start = "\$\$";
+      End = "\$\$";
+      Foldable = YES;
+      Recursive = NO;
+      Type = "xcode.syntax.keyword";
+      IncludeRules = ("xcode.lang.tex.braces","xcode.lang.tex.command", "xcode.lang.tex.comment.singleline");
+    };
+  },
+  
   {
     Identifier = "xcode.lang.tex.math.inline";
-    Syntax = { Start = "$"; End = "$"; Type = "xcode.syntax.keyword"; };
+    Syntax = { Start = "\$"; End = "\$"; Type = "xcode.syntax.keyword"; };
   },
   
   /****************************************************************************/
@@ -94,7 +113,6 @@
     Identifier = "xcode.lang.tex.command";
     Syntax = { StartChars = "\\"; Chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; CaseSensitive = NO; Type = "xcode.syntax.identifier.macro"; AltType = "xcode.syntax.word"; };
   },
-  // This rule now handles \[ and \] as simple special commands, which is safe.
   {
     Identifier = "xcode.lang.tex.command.special";
     Syntax = { StartChars = "\\"; Chars = "'\"\^`{}()[]-+=.,;:/|%¬ß*#&@$<>~\\"; Type = "xcode.syntax.identifier.macro"; AltType = "xcode.syntax.word"; };
@@ -112,12 +130,13 @@
     Identifier = "xcode.lang.tex.endkeyword";
     Syntax = { StartChars = "\\"; Match = ( "\\\\end\\{\(.*?\)\\}", ); CaptureTypes = ( "xcode.syntax.attribute" ); Type = "xcode.syntax.string"; };
   },
+  
   {
     Identifier = "xcode.lang.tex.beginendblock";
     Syntax = {
       Tokenizer = "xcode.lang.tex.lexer"; Start = "xcode.lang.tex.beginkeyword"; End = "xcode.lang.tex.endkeyword";
       Recursive = YES; Foldable = YES; Type = "xcode.syntax.plain";
-      IncludeRules = ( "xcode.lang.tex.math.block", "xcode.lang.tex.math.inline", "xcode.lang.tex.braces", "xcode.lang.tex.command", "xcode.lang.tex.command.special", "xcode.lang.tex.comment.singleline" );
+      IncludeRules = ( "xcode.lang.tex.math.display.brackets", "xcode.lang.tex.math.display.dollars", "xcode.lang.tex.math.inline", "xcode.lang.tex.braces", "xcode.lang.tex.command", "xcode.lang.tex.command.special", "xcode.lang.tex.comment.singleline" );
     };
   },
   
