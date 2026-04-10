@@ -2,7 +2,7 @@
  Tex LaTex Language Specification
  Part of package TeX-XCode Syntax Coloring
  Patrick Iglesias-Zemmour
- Version 2.2 (Final) April 2026
+ Version 2.5 (Extended to display math brackets \[...\]) April 2026
  http://math.huji.ac.il/~piz/
  
  Creative Commons Attribution-ShareAlike 4.0 International License
