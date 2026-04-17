@@ -1,24 +1,26 @@
-#!/bin/bash
+#!/bin/sh
 
-# TeX-Xcode-setup.sh
-# Launcher script.
-# It finds the installation logic inside the TeX.ideplugin bundle and executes it.
+#  Install TeX for Xcode.command
+#  TeX-Project
+#
+#  Created by Patrick I-Z on 24/12/2025.
+#  
+#!/bin/bash
 
 set -e
 
 echo "Starting TeX Colorization for Xcode installation..."
 
-# 1. Find the directory where THIS script is located
-#    This works even when opened via right-click → Open
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# 1. Find the Plugin Bundle
+#    Assumes the script is in the same folder as the plugin.
+SOURCE_DIR=$(pwd)
 PLUGIN_NAME="TeX.ideplugin"
-PLUGIN_PATH="$SCRIPT_DIR/$PLUGIN_NAME"
+PLUGIN_PATH="$SOURCE_DIR/$PLUGIN_NAME"
 WORKER_SCRIPT="$PLUGIN_PATH/Contents/Resources/install_worker.sh"
 
 # 2. Verify the Bundle exists
 if ! [ -d "$PLUGIN_PATH" ]; then
     echo "Error: $PLUGIN_NAME not found."
-    echo "Looking in: $SCRIPT_DIR"
     echo "Please make sure the 'TeX.ideplugin' is in the same directory as this script."
     exit 1
 fi
