@@ -1,85 +1,44 @@
 # TeX & LaTeX Syntax Highlighting for Xcode
 
-This plugin provides robust syntax highlighting for TeX and LaTeX documents directly within the Xcode IDE, turning it into a powerful, minimalist environment for academic and technical writing.
+This plugin provides robust syntax highlighting for TeX and LaTeX documents directly within the Xcode IDE.
 
-It was originally created by Patrick Iglesias-Zemmour and has been updated and improved in collaboration with Google's Gemini and DeepSeek | 深度求索 to be stable and reliable for modern Xcode versions.
+Created by Patrick Iglesias-Zemmour. Updated with Google's Gemini and DeepSeek.
 
 ![TeX in Xcode Dark Mode](screenshot.png)
 
 ## Features
 
-*   **Robust Highlighting:** A stable, predictable, and fast highlighting engine designed to never crash.
-*   **Hybrid Math Environment Support:**
-    *   **Inline Math (`$...$`):** Rendered as a simple, solid block of color to make it stand out clearly from surrounding text.
-    *   **Displayed Math (`$$...$$`):** The entire block is colored, with commands and braces highlighted inside for readability in large equations.
-        **Tip:** Do not write `\\[` for a line break followed by `[` (like in `\\[1em]`); write `\\` then space then `[` (this is good discipline).
-*   **Expanded File Support:** Syntax highlighting is also applied to LaTeX style (`.sty`), class (`.cls`), and bibliography (`.bbl`) files.
-*   **Code Folding:** All `\begin{...}...\end{...}` environments are fully foldable for easy navigation.
-*   **Structure Highlighting:** Commands, braces (`{}`, `()`, `[]`), and comments are clearly distinguished.
-*   **Light and Dark Themes:** Includes "Basic TeX" (Light) and "Dark TeX" (Dark) themes.
-
-## Compatibility
-
-*   **Modern Xcode (15+):** Works natively. You must click **"Load Bundle"** when Xcode first launches after installation.
-*   **Older Xcode (12-14):** Supported via a list of compatibility UUIDs. If the plugin does not load, you may need to add your Xcode's specific UUID to the `Info.plist` file inside the bundle.
+- Inline math `$...$` — solid red block
+- Display math `$$...$$` and `\[...\]` — red, foldable, with highlighted commands and braces inside
+- Purple commands (`\foo`)
+- Blue braces (`{}()[]`)
+- Gray comments (`%`)
+- Foldable `\begin...\end` environments
+- Light and Dark themes included
 
 ## Installation
 
-1.  Download the `.zip` file from the latest **[Release](https://github.com/p-i-z/TeX-Colorization-for-Xcode/releases)**.
-2.  Unzip the file.
-3.  **Important:**
-    To run the installer,
-    you must bypass the macOS security warning the first time.
-    **Right-click** on the `Install TeX for Xcode.command` file and select **"Open"**.
-4.  A dialog will appear.
-    Click the **"Open"** button to run the script.
+1. Download and unzip the latest **[Release](https://github.com/p-i-z/TeX-Colorization-for-Xcode/releases)**
 
-A Terminal window will open and run the installer.
-You may be asked for your administrator password to complete the installation.
+2. Open Terminal and navigate to the unzipped folder: `cd /path/to/unzipped/folder`
 
-### Troubleshooting: If the Installer Won't Run
+3. Run these three commands:
+4. ```
+   chmod +x "Install TeX for Xcode.command"
+   xattr -d com.apple.quarantine "Install TeX for Xcode.command"
+   ./Install TeX for Xcode.command
+   ```
 
-If macOS refuses to run the script or says it "cannot be verified," follow these steps.
+4. Enter your password when prompted
 
-**Method 1: The Terminal Fix (Permissions)**
-If you see a "permission denied" error, the file may have lost its executable status:
-1.  Open Terminal and `cd` into the folder.
-2.  Run: `chmod +x "Install TeX for Xcode.command"`
+5. Restart Xcode and click **"Load Bundle"**
 
-**Method 2: The Quarantine Fix (The Definitive Solution)**
-If you still get the "Apple could not verify..." warning even after right-clicking and choosing Open, you must manually remove the download quarantine flag.
+6. Go to **Xcode > Settings > Themes** and select **"Basic TeX"** or **"Dark TeX"**
 
-1.  Open Terminal and `cd` into the folder.
-2.  Run this command:
-    ```sh
-    xattr -d com.apple.quarantine "Install TeX for Xcode.command"
-    ```
-3.  You can now double-click the file normally.
+## Building from Source
 
-### Optional: Cleaner Filename (Power Users)
-
-If you prefer a cleaner look, you can remove the `.command` extension from the installer file (renaming it to just `Install TeX for Xcode`).
-
-As long as the file retains its executable permissions, macOS will recognize it as a Unix executable (displaying the "exec" icon) and it will still launch the Terminal when double-clicked.
-    
-## Getting Started
-
-1.  **Restart Xcode:** After installing, you must completely quit and restart Xcode.
-2.  **Load the Bundle:** When prompted, click **"Load Bundle"**.
-3.  **Select the Theme:** Go to **Xcode > Settings > Themes** and select either **"Basic TeX"** or **"Dark TeX"**.
-
-## Building from Source (For Developers)
-
-This repository is a complete Xcode project.
-To build the plugin from source:
-
-1.  Clone the repository and open the `TeX.xcodeproj` file.
-2.  **Important:**
-    Go to **Build Settings** and set **"User Script Sandboxing"** to **No**.
-    This is required to allow the build script to copy the finished plugin.
-3.  Press **⌘B** to build.
-    A post-build script will automatically place the finished `TeX.ideplugin` bundle in the project's root directory.
+Open `TeX.xcodeproj`, set **"User Script Sandboxing"** to **No** in Build Settings, then press ⌘B.
 
 ## License
 
-This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+[Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
