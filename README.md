@@ -26,7 +26,7 @@ Created by Patrick Iglesias-Zemmour. Updated with Google's Gemini and DeepSeek.
 4. ```
    chmod +x "Install TeX for Xcode.command"
    xattr -d com.apple.quarantine "Install TeX for Xcode.command"
-   ./Install TeX for Xcode.command
+   ./"Install TeX for Xcode.command"
    ```
 
 4. Enter your password when prompted
