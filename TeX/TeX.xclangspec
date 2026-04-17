@@ -2,7 +2,7 @@
  Tex LaTex Language Specification
  Part of package TeX-XCode Syntax Coloring
  Patrick Iglesias-Zemmour
- Version 2.5 (Extended to display math brackets \[...\]) April 2026
+ Version 2.5 (Extended to display math brackets \[...\]) April-Mai 2026
  http://math.huji.ac.il/~piz/
  
  Creative Commons Attribution-ShareAlike 4.0 International License
@@ -64,18 +64,15 @@
   // MARK: TeX Math Environments (Final Version)
   /****************************************************************************/
   
-  // Display math \[ ... \] — simple version
-  // NOTE: This will also match \\[1em] line breaks, coloring them as math.
-  // This is a known limitation documented in README.
+  // Display math \[ ... \] — FULL WORKING VERSION
   {
     Identifier = "xcode.lang.tex.math.display.brackets";
-    Syntax = {
-      Start = "\\\[";
-      End = "\\\]";
-      Foldable = YES;
-      Recursive = NO;
+    Syntax = { 
+      Start = "\\["; 
+      End = "\\]"; 
+      Foldable = YES; 
       Type = "xcode.syntax.keyword";
-      IncludeRules = ("xcode.lang.tex.braces","xcode.lang.tex.command", "xcode.lang.tex.comment.singleline");
+      IncludeRules = ("xcode.lang.tex.braces", "xcode.lang.tex.command", "xcode.lang.tex.comment.singleline");
     };
   },
   
@@ -85,7 +82,6 @@
     Syntax = { Start = "\$\$";
       End = "\$\$";
       Foldable = YES;
-      Recursive = NO;
       Type = "xcode.syntax.keyword";
       IncludeRules = ("xcode.lang.tex.braces","xcode.lang.tex.command", "xcode.lang.tex.comment.singleline");
     };
