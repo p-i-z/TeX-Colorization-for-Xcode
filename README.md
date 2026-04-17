@@ -20,10 +20,13 @@ Created by Patrick Iglesias-Zemmour. Updated with Google's Gemini and DeepSeek.
 
 1. Download and unzip the latest **[Release](https://github.com/p-i-z/TeX-Colorization-for-Xcode/releases)**
 
-2. Open Terminal and navigate to the unzipped folder: `cd /path/to/unzipped/folder`
+2. Open Terminal and navigate to the unzipped folder:
+   ```
+   cd /path/to/unzipped/folder
+   ```
 
 3. Run these three commands:
-4. ```
+   ```
    chmod +x "Install TeX for Xcode.command"
    xattr -d com.apple.quarantine "Install TeX for Xcode.command"
    ./"Install TeX for Xcode.command"
@@ -33,7 +36,7 @@ Created by Patrick Iglesias-Zemmour. Updated with Google's Gemini and DeepSeek.
 
 5. Restart Xcode and click **"Load Bundle"**
 
-6. Go to **Xcode > Settings > Themes** and select **"Basic TeX"** or **"Dark TeX"**
+6. Go to **Xcode > Settings > Themes** and select **"Basic TeX"** or **Dark TeX"**
 
 ## Building from Source
 
@@ -42,3 +45,4 @@ Open `TeX.xcodeproj`, set **"User Script Sandboxing"** to **No** in Build Settin
 ## License
 
 [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
