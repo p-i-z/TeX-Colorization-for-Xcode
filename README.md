@@ -21,14 +21,20 @@ Created by Patrick Iglesias-Zemmour. Updated with Google's Gemini and DeepSeek.
 1. Download and unzip the latest **[Release](https://github.com/p-i-z/TeX-Colorization-for-Xcode/releases)**
 
 2. Open Terminal and navigate to the unzipped folder:
+
    ```
    cd /path/to/unzipped/folder
    ```
 
 3. Run these three commands:
+
    ```
    chmod +x "Install TeX for Xcode.command"
+   ```
+   ```
    xattr -d com.apple.quarantine "Install TeX for Xcode.command"
+   ```
+   ```
    ./"Install TeX for Xcode.command"
    ```
 
