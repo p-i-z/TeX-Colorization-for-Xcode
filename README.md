@@ -7,12 +7,12 @@ Created by Patrick Iglesias-Zemmour. Updated with Google's Gemini and DeepSeek.
 ![TeX in Xcode Dark Mode](screenshot.png)
 
 ## Features
-
+Depending on chosen theme (modifiable inside Xcode)
 - Inline math `$...$` — solid red block
 - Display math `$$...$$` and `\[...\]` — red, foldable, with highlighted commands and braces inside
 - Purple commands (`\foo`)
 - Blue braces (`{}()[]`)
-- Gray comments (`%`)
+- Green comments (`%`)
 - Foldable `\begin...\end` environments
 - Light and Dark themes included
 
@@ -40,7 +40,7 @@ Created by Patrick Iglesias-Zemmour. Updated with Google's Gemini and DeepSeek.
 
 4. Enter your password when prompted
 
-5. Restart Xcode and click **"Load Bundle"**
+5. Restart Xcode and click **"Load Bundle"** if Xcode asks you
 
 6. Go to **Xcode > Settings > Themes** and select **"Basic TeX"** or **Dark TeX"**
 
